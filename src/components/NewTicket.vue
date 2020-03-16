@@ -67,7 +67,6 @@ export default {
   },
   methods: {
     async operation () {
-      // Operation
       // eslint-disable-next-line no-unused-vars
       const result = await this.$fetch('tickets/new', {
         method: 'POST',

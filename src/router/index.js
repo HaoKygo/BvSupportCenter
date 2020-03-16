@@ -3,9 +3,11 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import WorkTickets from '../views/WorkTickets'
 import Tickets from '../components/Tickets'
+import Ticket from '../components/Ticket'
 import NewTicket from '../components/NewTicket'
 import FAQ from '../views/FAQ'
 import Login from '../views/Login'
+import NotFound from '../components/NotFound'
 import state from '../state'
 
 Vue.use(VueRouter)
@@ -24,7 +26,8 @@ const routes = [
     },
     children: [
       { path: '', name: 'worktickets', component: Tickets },
-      { path: 'newticket', name: 'newticket', component: NewTicket }
+      { path: 'newticket', name: 'newticket', component: NewTicket },
+      { path: ':id', name: 'ticket', component: Ticket, props: route => ({id: route.params.id }) }
     ]
   },
   {
@@ -39,7 +42,8 @@ const routes = [
     meta: {
       guest: true
     }
-  }
+  },
+  { path: '*', component: NotFound }
 ]
 
 const router = new VueRouter({
@@ -47,7 +51,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log('to', to.name);
+  // console.log('to', to.name);
   if (to.matched.some(r => r.meta.private) && !state.user) {
     // Redirect to login
     next({ 

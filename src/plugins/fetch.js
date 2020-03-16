@@ -23,9 +23,9 @@ export async function $fetch (url, options) {
       return data;
     }
     else if (response.status === 403) {
-      // If the session is not longer valid, logout the account
+      // 如果对话过期，则登出
       this.$state.user = null;
-      // If the route is private, jump to login page
+      // 如果路由是私密的，则转到登录页面
       if (router.currentRoute.matched.some(r => r.meta.private)) {
         router.replace({ name: 'login', params: {
           wantedRoute: router.currentRoute.fullPath
@@ -45,7 +45,7 @@ export async function $fetch (url, options) {
 
 export default {
   install (Vue, options) {
-    console.log('Installed!', options);
+    // console.log('Installed!', options);
 
     baseUrl = options.baseUrl;
 

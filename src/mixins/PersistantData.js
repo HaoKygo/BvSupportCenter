@@ -2,7 +2,7 @@
 export default function (id, fields) {
   return {
     watch: fields.reduce((obj, field) => {
-      // Listen deal function
+      // 监听处理函数
       obj[field] = function (val) {
         localStorage.setItem(`${id}.${field}`, JSON.stringify(val));
       };

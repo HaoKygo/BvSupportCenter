@@ -2,10 +2,10 @@
   <b-form @submit.prevent="submit">
     <section class="content">
       <h2>{{ title }}</h2>
-      <!-- Main content -->
+      <!-- 主要内容 -->
       <slot />
       <div class="actions">
-        <!-- Action buttons -->
+        <!-- 相应按钮 -->
         <slot name="actions" />
       </div>
 
@@ -14,8 +14,8 @@
       </b-alert>
     </section>
 
-    <transition name="fade">
-      <!-- Expanding over the form -->
+    <transition>
+      <!-- 拓展表 -->
       <div class="text-center" v-if="busy"> 
         <b-spinner variant="info" label="Spinning"></b-spinner>
       </div>

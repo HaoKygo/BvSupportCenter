@@ -1,13 +1,5 @@
 <template>
 <div>
-  <!-- <b-jumbotron header="支持中心" lead="为您提供帮助的支持中心">
-    <p>请先阅读常见问题解答</p>
-    <b-button variant="primary" href="#">FAQ</b-button>
-
-    <p>如果找不到问题答案 请给我们发送工单</p>
-    <b-button variant="info" href="#">发送</b-button>
-  </b-jumbotron> -->
-
   <b-carousel
     :interval="3800"
     controls

@@ -6,7 +6,7 @@ export default function (resources) {
         remoteDataLoading: 0
       };
 
-      // Initial data properties.
+      // 初始化数据属性
       initData.remoteErrors = {};
       for (const key in resources) {
         initData[key] = null;
@@ -17,11 +17,11 @@ export default function (resources) {
     },
 
     computed: {
-      // Record the loading resource state
+      // 记录加载资源状态
       remoteDataBusy () {
         return this.$data.remoteDataLoading !== 0;
       },
-      // Record if has data loading errors.
+      // 记录书否有加载错误
       hasRemoteErrors () {
         return Object.keys(this.$data.remoteErrors).some(
           key => this.$data.remoteErrors[key]
@@ -37,7 +37,7 @@ export default function (resources) {
         }
         catch (e) {
           console.error(e);
-          // Put errors to the remoteErrors Obj.
+          // 将错误存入错误对象
           this.$data.remoteErrors[key] = e;
         }
         this.$data.remoteDataLoading--;
@@ -46,8 +46,16 @@ export default function (resources) {
 
     created() {
       for (const key in resources) {
-       let url = resources[key];
-       this.fetchResource(key, url);
+        let url = resources[key];
+        if (typeof url === 'function') {
+          this.$watch(url, (val) => {
+            this.fetchResource(key, val);
+          }, {
+            immediate: true
+          });
+        } else {
+          this.fetchResource(key, url);
+        }
       }
     }
   }

@@ -55,6 +55,7 @@
               </b-button-group>
             </b-container>
           </template>
+          
           <template v-else-if="mode === 'signup'">
             <b-container class="button-center">
               <b-button-group size="lg">

@@ -47,7 +47,7 @@
 export default {
   methods: {
     async logout () {
-      // Logout method
+      // 登出方法
       const result = await this.$fetch('logout');
       if (result.status === 'ok') {
         this.$state.user = null;
