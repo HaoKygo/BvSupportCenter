@@ -34,7 +34,7 @@
             <b-button variant="info" @click="logout">退出账号</b-button>
           </template>
           <b-button v-else variant="info" @click="$router.push('login')">登录</b-button>
-          <b-nav-item href="#">
+          <b-nav-item href="https://github.com/HaoKygo/BvSupportCenter">
             <img src="../assets/github.svg" alt="websit github url">
           </b-nav-item>
         </b-navbar-nav>
