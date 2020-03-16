@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.use(VueFetch, {
-  baseUrl: 'http://localhost:3000/'
+  baseUrl: 'http://104.198.9.179:33000/'
 })
 Vue.use(VueState, state)
 

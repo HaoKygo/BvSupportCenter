@@ -16,13 +16,13 @@
     <b-carousel-slide
       img-src="https://picsum.photos/991/420?image=56">
       <h2>请先阅读常见问题解答</h2>
-      <b-button variant="info" href="/#/faq">FAQ</b-button>
+      <b-button variant="primary" href="/#/faq">FAQ</b-button>
     </b-carousel-slide>
 
     <b-carousel-slide
       img-src="https://picsum.photos/991/420?image=60">
       <h2>如果找不到问题答案 请给我们发送工单</h2>
-      <b-button variant="info" href="/#/worktickets/newticket">发送</b-button>
+      <b-button variant="primary" href="/#/worktickets/newticket">发送</b-button>
     </b-carousel-slide>
   </b-carousel>
 </div>
