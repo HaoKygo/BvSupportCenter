@@ -31,9 +31,14 @@
               <b-icon-person-fill></b-icon-person-fill>
               {{ $state.user.username }}
             </b-nav-item>
-            <b-button variant="info" @click="logout">退出账号</b-button>
+            <b-nav-item>
+              <b-button variant="info" @click="logout" block>退出账号</b-button>
+            </b-nav-item>
           </template>
-          <b-button v-else variant="info" @click="$router.push('login')">登录</b-button>
+          <b-nav-item v-else>
+            <b-button variant="info" @click="$router.push('login')" block>登录</b-button>
+          </b-nav-item>
+          <!-- <b-button v-else variant="info" @click="$router.push('login')">登录</b-button> -->
           <b-nav-item href="https://github.com/HaoKygo/BvSupportCenter">
             <img src="../assets/github.svg" alt="websit github url">
           </b-nav-item>
